@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import Root from './components/Root';
 import './App.css';
+import './assets/main.css'
+
+import requests from './components/movieAPI/requests'
+import { Provider } from "react-redux"
+import Store from "./components/redux/Store"
+import FetchMovies from './components/movieAPI/FetchMovies';
+import { Switch, Route } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Provider store={Store}>
+          {Object.keys(requests).map(req => (
+            <FetchMovies key={req} title={req} fetchurl={requests[req]} />
+          ))}
+          <Route path="/" exact>
+            <Root />
+          </Route>
+        </Provider>
+      </Switch>
+    </>
   );
 }
 

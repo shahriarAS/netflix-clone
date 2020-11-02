@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero_text{
+    top: 30%;
+    width: 30%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header{
+    background-position: center center;
+    background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-modal{
+    background-color: rgba(51,51,51,0.5);
 }
 
-.App-link {
-  color: #61dafb;
+.poster_img{
+    width: 280px;
+    height: 119px;
+    transition: all 0.4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.poster_img:hover{
+    transform: scale(1.40);
+    margin-right: 50px;
+
+}
+
+.poster_img_lg{
+    transition: all 0.4s;
+}
+
+.poster_img_lg:hover{
+    transform: scale(1.15);
+}
+
+.row{
+    transition: all 0.4s;
+}
+
+.poster_img_lg:hover .poster_row{
+    display: none;
+}
+
+.poster_row::-webkit-scrollbar{
+    display: none;
+}
+
+.poster_row:hover img:not(:hover){
+    opacity: 0.4;
+}
+
+.popup{
+    overflow: auto;
+    height: 65vh;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    transition: width 0.2s linear 0.1s;
+}
+
+.popup__text{
+    width: 45%;
+    float: left;
+}
+
+.popup__btn{
+    transition: all 0.2s;
+}
+
+
+.popup__btn:hover{
+    transform: scale(1.08);
+}
+
+#disable{
+    pointer-events: all;
+    opacity: 1;
+}
+
+#search_box{
+    display: none;
+}
+
+/* 
+
+Search Box
+
+*/
+
+input {
+    outline: none;
+}
+input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+    display: none; 
+}
+
+
+input[type=search] {
+    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 32px;
+    width: 55px;
+    
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+    
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+input[type=search]:focus {
+    width: 130px;
+    background-color: #fff;
+    border-color: #66CC75;
+    
+    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+    color: #999;
+}
+input::-webkit-input-placeholder {
+    color: #999;
+}
+
+/* Demo 2 */
+.search_form input[type=search] {
+    width: 15px;
+    padding-left: 10px;
+    color: transparent;
+    cursor: pointer;
+}
+.search_form input[type=search]:hover {
+    background-color: #fff;
+}
+.search_form input[type=search]:focus {
+    width: 130px;
+    padding-left: 32px;
+    color: #000;
+    background-color: #fff;
+    cursor: auto;
+}
+.search_form input:-moz-placeholder {
+    color: transparent;
+}
+.search_form input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+@media screen and (max-width: 768px){
+    .hero_text{
+        width: 100%;
+    }
+
+    .header{
+        background-position: center;
+    }
+
+    .popup__text{
+        width: 100%;
+    }
+}
+
+.carousel-container {
+    width: 100%;
+    height: auto;
+}
+
+.navT{
+    background-color: black;
+    z-index: 1000;
+}
+
+.mod{
+    z-index: 1000;
+}
+
+.menu{
+    position: fixed;
+    top: 9vh;
+    height: 100vh;
+    width: 20%;
+    background:black;
+    background:rgba(0,0,0,0.8);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    transition: all 0.2s;
+
+}
+
+@media screen and (min-width: 320px){
+    .menu{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .menu{
+        width: 30%;
+    }
+}
+
+.hideMenu{
+    transform: translateX(-100%);
+}
+
+.modalOff{
+    transform: translateY(-100%);
 }
