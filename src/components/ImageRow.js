@@ -11,7 +11,7 @@ function ImageRow(props) {
 
     return (
         <>
-            <section className="bg-black my-12 overflow-hidden md:py-4 h-full text-green-400">
+            <section className="bg-black py-4 overflow-hidden md:py-8 h-full text-green-400">
                 <div className="px-8">
                     {
                         (title === "Trending") ? <ImageRowLarge title={title} movieByGenre={movies} /> : <ImageRowSmall title={title} movieByGenre={movies} />

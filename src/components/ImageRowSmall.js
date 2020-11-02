@@ -56,7 +56,7 @@ function ImageRowSmall(props) {
         <>
             <div className="row" onClick={OffModal}>
                 <h1 className="text-xl">{title}</h1>
-                <div className="poster_row overflow-y-hidden flex gap-2 py-8 overflow-x-scroll">
+                <div className="poster_row overflow-y-hidden flex gap-2 py-2 overflow-x-scroll">
                     <Carousel
                         containerClass="carousel-container"
                         itemClass="carousel-item"
