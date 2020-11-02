@@ -65,8 +65,13 @@ function ImageRowSmall(props) {
                         {
                             movieByGenre ? movieByGenre.map(
                                 movie => (
-                                    <img onClick={() => Show(movie)} key={movie.id} className="poster_img object-contain w-32 md:w-56 h-auto" src={BASE_IMG_URL + movie.backdrop_path}
-                                        alt={movie.title || movie.name} />
+                                    <div onClick={() => Show(movie)} className="over_container">
+                                        <img key={movie.id} className="poster_img object-contain w-32 md:w-56 h-auto" src={BASE_IMG_URL + movie.backdrop_path}
+                                            alt={movie.title || movie.name} />
+                                        <div className="middle">
+                                            <p className="middle_text">{movie.name || movie.title}</p>
+                                        </div>
+                                    </div>
                                 )
                             ) : ""
                         }
