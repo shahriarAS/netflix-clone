@@ -24,7 +24,7 @@ function Root() {
 
     return (
         <>
-            <section id="disable" className="">
+            <section id="disable" className="bg-black">
                 {(state.length === 7) ? (search !== "") ? (
                     <div>
                         <Header />

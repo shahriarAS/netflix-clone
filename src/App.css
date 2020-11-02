@@ -221,10 +221,23 @@ input::-webkit-input-placeholder {
     }
 }
 
+@media screen and (max-width: 320px){
+    .hero_p{
+        max-height: 20ch;
+        position: relative!important;
+        /* white-space: nowrap; */
+        overflow: hidden!important;
+    }
+}
+
 .hideMenu{
     transform: translateX(-100%);
 }
 
 .modalOff{
     transform: translateY(-100%);
+}
+
+.hero_p{
+    max-height: 20ch;
 }
