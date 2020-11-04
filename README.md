@@ -1,3 +1,26 @@
+This is a clone of netflix where you can search for a movie and also you can see details about any movie. All movie info dynamically fetching from TMDB API.
+
+## Functionality added:
+<ol>
+  <li>Search Any Movie</li>
+  <li>Show different type of movie in separate reponsive row</li>
+  <li>See movie details with one simple click on poster</li>
+  <li>Slide poster with mouse drag and also with touch</li>
+  <li>Full respnsive for 4 main device breakpoints</li>
+  <li>Responsive Menu bar</li>
+</ol>
+
+## Technology Used:
+<ol>
+  <li>React 17</li>
+  <li>Axios</li>
+  <li>React Router</li>
+  <li>React Context API</li>
+  <li>TMDB API</li>
+  <li>React Multi Carousel</li>
+  <li>Tailwind CSS & Custom CSS3</li>
+ </ol>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +91,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
