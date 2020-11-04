@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Modal from './Modal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import ReactModal from 'react-modal';
 
 const responsive = {
     desktop: {
@@ -28,33 +29,30 @@ const responsive = {
 
 function ImageRowSmall(props) {
     const { title, movieByGenre } = props
-    const [state, setstate] = useState({
-        type: false,
-        data: {}
-    })
+    const [state, setstate] = useState(false)
     const BASE_IMG_URL = "https://image.tmdb.org/t/p/original"
 
-    function Show(i) {
-        if (state.type === true) {
-            setstate({ data: {}, type: false })
-        }
-        else {
-            setstate({ data: i, type: true })
-        }
-    }
+    // function Show(i) {
+    //     if (state.type === true) {
+    //         setstate({ data: {}, type: false })
+    //     }
+    //     else {
+    //         setstate({ data: i, type: true })
+    //     }
+    // }
 
-    function OffModal(event) {
-        const listofclass = Array.from(event.target.classList).filter(i => i === "mod")
-        console.log(listofclass)
-        if (state.type === true && (listofclass.length === 0)) {
-            setstate({ data: {}, type: false })
-        }
-        console.log(Array.from(event.target.classList))
-    }
+    // function OffModal(event) {
+    //     const listofclass = Array.from(event.target.classList).filter(i => i === "mod")
+    //     console.log(listofclass)
+    //     if (state.type === true && (listofclass.length === 0)) {
+    //         setstate({ data: {}, type: false })
+    //     }
+    //     console.log(Array.from(event.target.classList))
+    // }
 
     return (
         <>
-            <div className="row" onClick={OffModal}>
+            <div className="row">
                 <h1 className="text-xl">{title}</h1>
                 <div className="poster_row overflow-y-hidden flex gap-2 py-2 overflow-x-scroll">
                     <Carousel
@@ -65,8 +63,8 @@ function ImageRowSmall(props) {
                         {
                             movieByGenre ? movieByGenre.map(
                                 movie => (
-                                    <div onClick={() => Show(movie)} className="over_container">
-                                        <img key={movie.id} className="poster_img object-contain w-32 md:w-56 h-auto" src={BASE_IMG_URL + movie.backdrop_path}
+                                    <div onClick={() => setstate(true)} className="over_container">
+                                        <img key={movie.id} className="poster_img object-contain w-64 h-auto" src={BASE_IMG_URL + movie.backdrop_path}
                                             alt={movie.title || movie.name} />
                                         <div className="middle">
                                             <p className="middle_text">{movie.name || movie.title}</p>
@@ -78,7 +76,17 @@ function ImageRowSmall(props) {
                     </Carousel>
                 </div>
                 <div>
-                    {state.type ? <Modal movie={state.data} /> : ""}
+                    <ReactModal isOpen={state.type} style={{
+                        overlay: {
+                            backgroundColor: 'transparent'
+                        },
+                        content: {
+                            backgroundColor: "transparent",
+                            border: "none",
+                        }
+                    }}>
+                        <Modal movie={state.data} />
+                    </ReactModal>
                 </div>
             </div>
         </>

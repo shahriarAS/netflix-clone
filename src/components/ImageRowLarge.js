@@ -72,7 +72,7 @@ function ImageRowLarge(props) {
 
                 </div>
                 <div>
-                    {state.type ? <Modal movie={state.data} /> : ""}
+                    <Modal className="hidden" movie={state.data} />
                 </div>
             </div>
         </>
