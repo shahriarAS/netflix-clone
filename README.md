@@ -1,5 +1,5 @@
 This is a clone of netflix where you can search for a movie and also you can see details about any movie. All movie info dynamically fetching from TMDB API.
-
+ 
 ## Functionality added:
 <ol>
   <li>Search Any Movie</li>
